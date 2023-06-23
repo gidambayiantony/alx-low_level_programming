@@ -1,35 +1,28 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
- * Finds the largest prime factor of a number.
+ * main -  calculate largest prime of 612852475143
  *
- * @param n The number to find the largest prime factor of.
- * @return The largest prime factor of n.
+ * Return: Success Always
  */
-long largest_prime(long n) {
-  long largest_prime = -1;
-  for (long i = 2; i * i <= n; i++) {
-    while (n % i == 0) {
-      largest_prime = i;
-      n /= i;
-    }
-  }
 
-  if (n > 1) {
-    largest_prime = n;
-  }
 
-  return largest_prime;
+int main(void)
+{
+	long int x = 612852475143;
+	long int py;
+
+	for (py = 2; py < x; py++)
+	{
+		if (x % py == 0)
+		{
+			x = x / py;
+		}
+	}
+	printf("%ld\n", py);
+	return (0);
 }
 
-int main(void) {
-  long n = 612852475143;
-  long largest_prime = largest_prime(n);
-
-  printf("The largest prime factor of %ld is %ld.\n", n, largest_prime);
-  return 0;
-}
 
 
 
